@@ -12,6 +12,9 @@ class Solution(object):
         :type root: Node
         :rtype: Node
         """
+        
+        #Iteratively InOrder
+        """
         if not root: return None
         stack, curr, res = [], root, []
         while stack or curr:
@@ -35,3 +38,22 @@ class Solution(object):
                 curr.right = head
         head.left = curr
         return head
+        """
+        
+        last, first = None
+        #Recursion + python3
+        def helper(node):
+            nonlocal last, first
+            if node:
+                helper(node.left)
+                if last:
+                    last.right = node
+                    node.left = last
+                else: 
+                    first = node
+                last = node
+                helper(node.right)
+        helper(root)
+        if not root: return None
+        last.right, first.left  = first, last
+        return first
