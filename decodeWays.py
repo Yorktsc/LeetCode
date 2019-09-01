@@ -1,7 +1,7 @@
 class Solution(object):
     def numDecodings(self, s):
         """
-        :type s: str
+        :type s: int
         :rtype: int
         """
         """
