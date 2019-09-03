@@ -2,7 +2,7 @@ class Solution(object):
     def subsets(self, nums):
         """
         :type nums: List[int]
-        :rtype: List[List[int]]
+        :itype: List[List[int]]
         """
         res = [[]]
         for num in nums:
